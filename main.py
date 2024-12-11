@@ -208,7 +208,7 @@ async def start_command(client, message):
         /ping `<uptime_bot>` - Get system info and bot uptime
         /clean `<delete_data>` - This cmd can delete all your entire data which is stored in your mongo db database
     """
-    await message.reply(help_text)
+    await message.reply(start_text)
 
 
 @app.on_message(filters.command("start"))
