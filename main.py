@@ -194,6 +194,23 @@ async def import_database(client, message):
     
 
 
+# Define the /start command
+@app.on_message(filters.command("start"))
+async def start_command(client, message):
+    start_text = """
+        **👋 Welcome to the MongoDB Transfer Bot!**
+        /start - Start the bot
+        /setold `<old_mongo_uri>` - Set old MongoDB URI
+        /setnew `<new_mongo_uri>` - Set new MongoDB URI
+        /transfer `<transfer_data>` - Start transferring data
+        /listalldb `<see_data>` - List all databases in the old MongoDB instance
+        /status `<status_process>` - Check bot status
+        /ping `<uptime_bot>` - Get system info and bot uptime
+        /clean `<delete_data>` - This cmd can delete all your entire data which is stored in your mongo db database
+    """
+    await message.reply(help_text)
+
+
 @app.on_message(filters.command("start"))
 async def start(client, message):
     await message.reply_text(
